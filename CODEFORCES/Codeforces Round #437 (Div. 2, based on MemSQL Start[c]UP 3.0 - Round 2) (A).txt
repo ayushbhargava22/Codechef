@@ -1,0 +1,38 @@
+#include <iostream>
+#include<cmath>
+#include<vector>
+#include<algorithm>
+using namespace std;
+typedef long long ll;
+
+int main()
+{
+   int n;
+   cin>>n;
+   string s;
+   cin>>s;
+   
+   int seatlle = 0, fran=0;
+   for(int i=0;i<n;i++)
+   {
+       if(s[i] == 'S' && s[i+1] == 'F')
+       {
+           seatlle++;
+       }
+       else if(s[i] == 'F' && s[i+1] == 'S')
+       {
+           fran++;
+       }
+   }
+   
+   if(seatlle > fran)
+   {
+       cout<<"YES"<<endl;
+   }
+   else
+   {
+       cout<<"NO"<<endl;
+   }
+   
+   return 0;
+}
