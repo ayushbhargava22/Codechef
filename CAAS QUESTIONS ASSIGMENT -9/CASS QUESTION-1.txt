@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int n;
+   cin>>n;
+   int start[n],end[n];
+   for(int i=0;i<n;i++)
+   {
+       cin>>start[i]>>end[i];
+   }
+   int diff=0;
+   int common=0;
+   for(int i=0;i<n;i++)
+   {
+       if(i==0)
+       {
+           diff = end[i] - start[i];
+       }
+       if(i!=0)
+       {
+           if(start[i] < end[i-1])
+           {
+               common = end[i-1] - start[i];
+               diff = diff - common + (end[i] - start[i]);
+           }
+           else if(start[i] > end[i-1])
+           {
+               diff = diff + (end[i] - start[i]);
+           }
+       }
+   }
+   
+   cout<<diff;
+   
+   return 0;
+}

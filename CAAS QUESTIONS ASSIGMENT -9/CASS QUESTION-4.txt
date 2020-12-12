@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int bowls_no;
+    cin>>bowls_no;
+    int bowls[bowls_no];
+    for(int i=1;i<=bowls_no;i++)
+    {
+        cin>>bowls[i];
+    }
+    
+    int flag = 0;
+    for(int i=bowls_no;i>=1;i--)
+    {
+        if(bowls[i] < 9)
+        {
+            bowls[i] = bowls[i] + 1;
+            cout<<i<<endl;
+            flag = 1;
+            break;
+        }
+    }
+    if(flag == 0)
+    {
+        cout<<"0"<<endl;
+    }
+    return 0;
+}
